@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="hesap.css">
+</head>
+
+<body>
+	<div id="hesap">
+		<form name="numaratör">
+			<input value="" type="textarea" name="ekran" style="width: 315px;height: 100px;margin:0 5px 0 5px;">
+			<input class="button" type="button" name="number7" value="7" onclick="ekranda(7);">
+			<input class="button"type="button" name="number8" value="8"onclick="ekranda(8);">
+			<input class="button"type="button" name="number9" value="9"onclick="ekranda(9);">
+			<input class="button"type="button" name="number4"value="4"onclick="ekranda(4);">
+			<input class="button"type="button" name="number5"value="5"onclick="ekranda(5);">
+			<input class="button"type="button" name="number6"value="6"onclick="ekranda(6);">
+			<input class="button"type="button" name="number1"value="1"onclick="ekranda(1);">
+			<input class="button"type="button" name="number2"value="2"onclick="ekranda(2);">
+			<input class="button"type="button" name="number3"value="3"onclick="ekranda(3);">
+			<input type="button" name="number0"value="0" style="width: 210px;height: 100px;background-color: lightblue;float: left;margin: 10px 5px 0 5px;"onclick="ekranda(0);">
+			<input class="button"type="button" name="number1"value=","onclick="ekranda(',');">
+		</form>
+	</div>
+	<div id="sil">
+		<form name="silici">
+			<input value="<---"type="button" name="C" style="width: 100px; height:55px;margin: 30px 0 0 0;"onclick="sil();">
+			<input value="AC"type="button" name="AC" style="width: 100px; height:55px;margin: 30px 0 0 0;"onclick="hepsinisil();">
+		</form>
+	</div>
+	<div id="islemler">
+		<input class="button" type="button"value="+" name="toplama" onclick="deger1();hepsinisil();sec=1;" style="margin:0px 0 5px 0; ">
+		<input class="button" type="button"value="-" name="çıkartma"onclick="deger1();hepsinisil();sec=2"style="margin:0px 0 5px 5px; ">
+		<input class="button" type="button"value="X" name="çarpma"onclick="deger1();hepsinisil();sec=3"style="margin:5px 0 5px 0; ">
+		<input class="button" type="button"value="/" name="bölme"onclick="deger1();hepsinisil();sec=4"style="margin:5px 0 5px 5px; ">
+		<input class="button" type="button"value="Kare" name="kare"onclick="kare();"style="margin:5px 0 5px 0; ">
+		<input class="button" type="button"value="KareKök" name="karekök"onclick="karekök();"style="margin:5px 0 5px 5px; ">
+		<input class="button" type="button"value="=" name="sonuc"onclick="secim(sec);;"style="margin:5px 0 5px 0; width: 205px; ">
+		
+	</div>
+
+
+
+<script type="text/javascript">
+	var x;
+	function ekranda(x){
+		var y=document.numaratör.ekran.value;
+		document.numaratör.ekran.value=y+""+x;
+	}
+	function hepsinisil(){
+		document.numaratör.ekran.value=" ";
+	}
+	function sil(){
+		var y=document.numaratör.ekran.value;
+		y=Math.floor(y/10);
+		document.numaratör.ekran.value=y;
+	}
+	function deger1(){
+		x=document.numaratör.ekran.value;
+	}
+	function topla(){
+		var y=document.numaratör.ekran.value;
+		x=parseFloat(x);
+		y=parseFloat(y);
+		x+=y;
+		document.numaratör.ekran.value=x;
+	}
+	function cikartma(){
+		var y=document.numaratör.ekran.value;
+		x=parseFloat(x);
+		y=parseFloat(y);
+		x-=y;
+		document.numaratör.ekran.value=x;
+	}
+	function carpma(){
+		var y=document.numaratör.ekran.value;
+		x=parseFloat(x);
+		y=parseFloat(y);
+		x*=y;
+		document.numaratör.ekran.value=x;
+	}
+	function bölme(){
+		var y=document.numaratör.ekran.value;
+		x=parseFloat(x);
+		y=parseFloat(y);
+		x/=y;
+		document.numaratör.ekran.value=x;
+	}
+	function kare(){
+		var y=document.numaratör.ekran.value;
+		y=parseFloat(y);
+		y*=y;
+		document.numaratör.ekran.value=y;
+	}
+	function karekök(){
+		var y=document.numaratör.ekran.value;
+		y=parseFloat(y);
+		y=Math.sqrt(y);
+		document.numaratör.ekran.value=y;
+	}
+
+	function secim(sec){
+	switch(sec){
+		case 1:
+			topla();
+			break;
+		case 2:
+			cikartma();
+			break;
+		case 3:
+			carpma();
+			break;
+		case 4:
+			bölme();
+			break;
+		}
+	}
+</script>
+</body>
+</html>
+
+
+
+
