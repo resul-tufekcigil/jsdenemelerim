@@ -1,0 +1,27 @@
+.button{
+	width: 100px;
+	height: 100px;
+	background-color: lightblue;
+	float: left;
+	margin: 10px 5px 0 5px;
+
+}
+#hesap{
+	width: 330px;
+	float: left;
+	background-color: lightgrey;
+}
+#islemler{
+	width: 205px;
+	height: 430px;
+	background-color: grey;
+	margin-top:115px;
+	float: left;
+	margin-left:-205px;
+}
+#sil{
+	width: 205px;
+	background-color: lightgrey;
+	float:left;
+	height: 115px;
+}
